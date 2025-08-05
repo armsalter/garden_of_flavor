@@ -1,24 +1,31 @@
-🌿 Garden of Flavor – A Café & Restaurant Web Project
-Welcome to Garden of Flavor – a stylish and interactive café & restaurant web application designed to blend aesthetic beauty with functional design. ☕🍰
+# 🌿 Garden of Flavor – Café & Restaurant Web Experience
 
-✨ Project Highlights
-🧩 Built with: HTML, CSS, and JavaScript
+Welcome to **Garden of Flavor** – a stylish and interactive café & restaurant web application that blends aesthetic beauty with functional design. ☕🍰
 
-📦 Features a custom-made artificial database 
+## ✨ Features
 
-🎨 Modern UI/UX design inspired by real café atmospheres
+- 🔧 Built with **HTML**, **CSS**, and **JavaScript**
+- 📦 Simulated backend with a custom-made artificial database
+- 🎨 Clean and modern UI/UX inspired by real café atmospheres
+- ⚡ Fully responsive and mobile-friendly design
+- 🛒 Interactive menu browsing and order simulation
 
-⚡ Fully responsive and interactive interface
+## 🌟 About the Project
 
-🛒 Simulated menu browsing and order placing system
+Garden of Flavor is more than just a restaurant website — it's a **digital café experience**.
 
-🌟 About the Project
-Garden of Flavor is more than just a website – it’s a digital café experience. Designed and developed from scratch, this project showcases my front-end development skills and creativity through a fully functional restaurant prototype. With a handcrafted mock database, all interactions feel real while remaining lightweight and backend-free.
+From concept to code, this project was crafted to demonstrate front-end development skills, creativity, and attention to detail. Despite being a frontend-only project, the experience feels dynamic and immersive, thanks to a handcrafted mock data system.
 
-Whether you're exploring the elegant menu, navigating the cozy layout, or placing a test order, this project is built to impress – both visually and technically.
+You can:
 
-Feel free to fork, explore, and taste the Garden of Flavor.
-Bon appétit – and happy coding! 🍽️🌸
+- Browse the beautifully designed menu  
+- Simulate placing an order  
+- Enjoy the smooth and responsive interface across devices
+
+> 💡 This project was created as a showcase for personal learning and portfolio use. It does not include a real backend or database connection.
+
+## 🚀 Live Demo
+https://gardenofflavor.netlify.app/
 
 #ScreenShot
 
