@@ -25,7 +25,7 @@ You can:
 > 💡 This project was created as a showcase for personal learning and portfolio use. It does not include a real backend or database connection.
 
 ## 🚀 Live Demo
-https://gardenofflavor.netlify.app/
+🔗 [View Live Project](https://gardenofflavor.netlify.app/)  
 
 #ScreenShot
 
