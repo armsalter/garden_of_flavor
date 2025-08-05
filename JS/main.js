@@ -1,44 +1,69 @@
 import getMenu from "./api.js";
-import {renderDetailPage, renderMenuCard, uiElements } from "./ui.js";
-document.addEventListener("DOMContentLoaded", async () => {
-  // console.log();// nerede oldyuğumuzu direk yazıyor
-  //hangi sayfada olduğumuza göre işlemler yap,index.htmel deysek ona göre,detail.hetmel deysek ona göre işlemler yaparız.
-  // ? peki biz aşağıdaki if döngüsünü neden kurduk eğer biz ana sayfadaysak ana sayfayı render layacağız, detay safasındaysak detay sayfasını renderlayacağız, neredeysek ona göre renderlayacağız, o yüzden bu if döngüsünü kurduk.
-  // API iteği at
-  const menuData = await getMenu();
-  // console.log(menuData);
+import {
+  renderDetailPage,
+  renderLoader,
+  renderMenuCard,
+  renderNotFound,
+  uiElements,
+} from "./ui.js";
 
+document.addEventListener("DOMContentLoaded", async () => {
+  // Api isteği at
+  const menuData = await getMenu();
+
+  // Hangi sayfada olduğumuza karar ver.Eğer ana sayfadaysak buna göre işlemler detay sayfasında ise buna göre işlemler yapacağız
   if (window.location.pathname.includes("/index.html")) {
-    //  console.log(`Ana Sayfadayım`);
-    renderMenuCard(menuData);
-    // console.log(uiElements.categoryButtons);
+    // Loader'ı render et
+
+    renderLoader();
+
+    setTimeout(() => {
+      // Menu elemanlarını dinamik şekilde render et
+      renderMenuCard(menuData);
+    }, 2000);
+
+    // uiElements.categoryButtons bir nodeList olduğundan buna addEventListener ekleyemeyiz.Bunun için nodeList içerisindeki her bir elemana teker teker erişip addEventListener ekleyeceğiz.
     uiElements.categoryButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        // console.log(button.id);
+        // butona tıklanınca butonun id'sine eriş ve bunu selectedCategory'e aktar
+
         const selectedCategory = button.id;
-        const filteredMenu = menuData.filter(
+
+        // menuData içerisindeki selectedCategory'e sahip elemanlara eriş
+
+        const filtredMenu = menuData.filter(
           (item) => item.category == selectedCategory
         );
-        // console.log(filteredMenu);
+
+        // Filtrelenen ürünlere göre menuListesini renderla.Eğer selectedCategory all'a eşitse tüm ürünleri renderla ama selectedCategory all değeri haricinde bir değere eşitse o kategorideki ürünleri renderla
+
         if (selectedCategory == "all") {
+          // selectedCategory all ise
           renderMenuCard(menuData);
         } else {
-          renderMenuCard(filteredMenu);
+          // selectedCategory all haricinde bir değere sahipse
+          renderMenuCard(filtredMenu);
         }
       });
     });
   } else {
-    console.log(`Detay sayfasındayım`);
-    // ! Detay sayfasında ilk yapılacak şey URL deki parametreye eriş
-
-    // console.log(window.location.search)
-    //bununla arama parametresine eriştik
+    // Url'deki parametreye eriş
+    // ! URLSearchParams javascript içerisinde yer alan bir classtır.Url'e geçilen parametreleri kolay bir şekilde yönetmemizi sağlar.
     const params = new URLSearchParams(window.location.search);
-    // console.log(params.get("id"));
-    const itemId = +params.get("id"); //number ve parceInt yada + işareti aynı işi görür
-    // console.log(typeof itemId);
+
+    // Ürünün id'sini number veri  tipine dönüştür ve bir değişkene aktar
+    const itemId = +params.get("id");
+
+    // menuData içerisinde itemId'e sahip elemanı bul
     const product = menuData.find((item) => item.id == itemId);
-    //console.log(product);
-   renderDetailPage(product)
+
+    // Eğer product yoksa not-found sayfası renderla
+    if (!product) {
+      renderNotFound();
+    } else {
+      // Bulunan product'a göre arayüzü renderla
+
+      renderDetailPage(product);
+    }
   }
 });

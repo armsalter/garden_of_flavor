@@ -1,14 +1,23 @@
-// ? Apı ya istek atacak fonksiyon
+// Api'a istek atacak fonksiyon
+
 const getMenu = async () => {
   try {
+    // Api'a istek at
     const response = await fetch("../db.json");
+
+    // Api'dan gelen veriyi JSON'dan Js nesnesine çevir
     const data = await response.json();
-    // console.log(response);
-    // console.log(data.menu);
+
+    // Gelen veri içerisindeki menu'yü return et
+
     return data.menu;
   } catch (error) {
-    console.log(`API Hatası: ${error}`);// hata durumunda kullancıyı bilgilendir.
-        return [];// Eğer hata varsa boş bir dizi döndür.
+    //  Hata durumunda kullanıcıya bildirimde bulun
+    console.log(`Apı Hatası: ${error}`);
+
+    // Eğer hata varsa geriye boş bir dizi dönder
+    return [];
   }
 };
+
 export default getMenu;
