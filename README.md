@@ -19,3 +19,6 @@ Whether you're exploring the elegant menu, navigating the cozy layout, or placin
 
 Feel free to fork, explore, and taste the Garden of Flavor.
 Bon appétit – and happy coding! 🍽️🌸
+
+#ScreenShot
+![Uploading EkranKayd2025-08-05181617-ezgif.com-video-to-gif-converter.gif…]()
