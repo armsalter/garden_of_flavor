@@ -4,7 +4,7 @@ Welcome to Garden of Flavor – a stylish and interactive café & restaurant web
 ✨ Project Highlights
 🧩 Built with: HTML, CSS, and JavaScript
 
-📦 Features a custom-made artificial database (no external backend required)
+📦 Features a custom-made artificial database 
 
 🎨 Modern UI/UX design inspired by real café atmospheres
 
